@@ -1,12 +1,12 @@
 module "vpc" {
   source = "../modules/vpc"
 
-  project                             = "sandoki"
+  project                             = var.project
   env                                 = "stag"
-  aws_region                          = "ap-northeast-2"
-  azs                                 = ["ap-northeast-2a"]
-  allowed_cidr_blocks_to_bastion_host = ["0.0.0.0/0"]
-  vpc_name                            = "sandoki_stag_vpc"
+  aws_region                          = var.aws_region
+  azs                                 = var.azs
+  allowed_cidr_blocks_to_bastion_host = var.allowed_cidr_blocks_to_bastion_host
+  vpc_name                            = "${var.project}_stag_vpc"
 
   vpc_cidr_block = "10.2.0.0/16"
   public_subnet_cidr_blocks = [

@@ -1,3 +1,8 @@
+variable "vpc_name" {
+  type        = string
+  description = "VPC name of the network"
+}
+
 variable "allowed_cidr_blocks_to_bastion_host" {
   type        = list(string)
   description = "CIDR blocks of the members of the project for allowing access to bastion host"
