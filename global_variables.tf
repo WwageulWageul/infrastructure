@@ -8,8 +8,8 @@ variable "env" {
   description = "environment of the resources"
 
   validation {
-    condition     = contains(["dev", "stag", "qa", "prod"], var.env)
-    error_message = "`env` must be one of `dev`, `stag`, `qa`, `prod`"
+    condition     = contains(["dev", "stag", "prod"], var.env)
+    error_message = "`env` must be one of `dev`, `stag`, `prod`"
   }
 }
 
