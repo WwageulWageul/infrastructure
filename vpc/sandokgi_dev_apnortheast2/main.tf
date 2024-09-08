@@ -4,7 +4,7 @@ module "vpc" {
   project                             = var.project
   env                                 = "dev"
   aws_region                          = var.aws_region
-  azs                                 = ["ap-northeast-2a"]
+  azs                                 = var.azs
   allowed_cidr_blocks_to_bastion_host = var.allowed_cidr_blocks_to_bastion_host
   # azs        = ["ap-northeast-2a", "ap-northeast-2c"]
   vpc_name = "${var.project}_dev_vpc"

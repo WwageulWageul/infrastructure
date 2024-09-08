@@ -4,7 +4,7 @@ module "vpc" {
   project                             = var.project
   env                                 = "stag"
   aws_region                          = var.aws_region
-  azs                                 = ["ap-northeast-2a"]
+  azs                                 = var.azs
   allowed_cidr_blocks_to_bastion_host = var.allowed_cidr_blocks_to_bastion_host
   vpc_name                            = "${var.project}_stag_vpc"
 
