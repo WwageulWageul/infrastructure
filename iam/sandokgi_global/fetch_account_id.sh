@@ -1,0 +1,1 @@
+../../scripts/fetch_account_id.sh

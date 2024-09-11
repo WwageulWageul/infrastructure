@@ -1,0 +1,1 @@
+../../global/global_remote_state.tf

@@ -1,12 +1,14 @@
 # ----------------------------------------------------------------------------------------------------------------
+#
 # Isolated Private Subnet and associated resources
+#
 # ----------------------------------------------------------------------------------------------------------------
 resource "aws_subnet" "isolated_private" {
   count = length(var.azs)
 
   vpc_id            = aws_vpc.main.id
-  availability_zone = element(var.azs, count.index)
-  cidr_block        = element(var.isolated_private_subnet_cidr_blocks, count.index)
+  availability_zone = var.azs[count.index]
+  cidr_block        = local.isolated_private_subnet_cidr_blocks[count.index]
 }
 
 resource "aws_route_table" "isolated_private" {
